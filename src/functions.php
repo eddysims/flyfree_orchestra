@@ -1,6 +1,6 @@
 <?php
-if ( ! function_exists( 'jobber_marketing_theme_2019_setup' ) ) :
-	function jobber_marketing_theme_2019_setup() {
+if ( ! function_exists( 'flyfree_setup' ) ) :
+	function flyfree_setup() {
 		load_theme_textdomain( 'flyfree', get_template_directory() . '/languages' );
 		
 		add_theme_support( 'automatic-feed-links' );
@@ -13,6 +13,8 @@ if ( ! function_exists( 'jobber_marketing_theme_2019_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'jobber_marketing_theme_2019_setup' );
+add_action( 'after_setup_theme', 'flyfree_setup' );
+
 
 require_once 'inc/enqueue.php';
+require_once 'inc/timber.php';
