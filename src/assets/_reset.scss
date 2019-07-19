@@ -1,0 +1,52 @@
+html,
+html * {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Work Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    font-weight: 900;
+}
+
+h2 {
+    font-family: 'Work Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    font-weight: 900;
+}
+
+a {
+    display: inline-block;
+    transition: all 300ms;
+    color: $red;
+    text-decoration: none;
+    box-shadow: 0 -1px 0 0 $red inset;
+    padding: 0 2px;
+    line-height: 1.4;
+
+    &:hover {
+        color: white;
+        box-shadow: 0 -23px 0 0 red inset;
+    }
+}
+
+strong {
+    font-weight: 900;
+}
+
