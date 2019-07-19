@@ -48,7 +48,12 @@ async function runBundle( files ) {
             proxy: process.env.DEV_URL,
         });
         runWatcher( bundler );
+
+        bundler.on('buildEnd', () => {
+            reloadBrowsers(bundler);
+        });
     }
+    
 }
 
 /**

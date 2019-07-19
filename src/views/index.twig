@@ -8,18 +8,11 @@
 	{{ function('wp_head') }}
 </head>
 <body {{ function('body_class') }}>
-	<h1>Hello World</h1>
 
-	<ul>
-		{% for item in main_menu.items %}
-			<li>
-				<a href="{{ item.url }}" class="{{ item.class }}">
-					{{ item.title }}
-				</a>
-			</li>
-		{% endfor %}
-	</ul>
+<div class="site">
 
-	{{ function('wp_footer') }}
+</div><!-- /.site -->
+{{ function('wp_footer') }}
+
 </body>
 </html>
