@@ -1,0 +1,27 @@
+.navigation {
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    padding: .5rem 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        height: 4rem;
+    }
+
+    &__contact {
+        display: none;
+    }
+
+    &__list {
+        display: none;
+    }
+
+    &_hamburger {
+        position: relative;
+        z-index: 1001;
+    }
+}

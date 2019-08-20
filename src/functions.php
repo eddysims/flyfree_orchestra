@@ -10,6 +10,7 @@ if ( ! function_exists( 'flyfree_setup' ) ) :
 		
 		register_nav_menus( array(
 			'main-menu' => esc_html__( 'Main Menu', 'flyfree' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'flyfree' ),
 		) );
 	}
 endif;

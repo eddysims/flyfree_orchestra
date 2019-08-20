@@ -1,3 +1,7 @@
 import './main.bundle.scss';
 
-console.log('hello world')
+import hamburgerClick from './hamburger'
+
+document.addEventListener('DOMContentLoaded', () => {
+    hamburgerClick();
+})

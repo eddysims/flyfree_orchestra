@@ -1,9 +1,27 @@
-<ul>
-    {% for item in main_menu.items %}
-        <li>
-            <a href="{{ item.url }}" class="{{ item.class }}">
-                {{ item.title }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+<nav class="navigation" role="navigation">
+    <div class="navigation__container container">
+
+        {% include "partials/_logo.twig" with { is_clickable: true } %}
+
+        <ul class="navigation__list">
+            <li class="navigation__item navigation__item--logo">
+                {% include "partials/_logo.twig" with { is_clickable: true } %}
+            </li>
+            {% for item in main_menu.items %}
+                <li class="navigation__item">
+                    <a href="{{ item.url }}" class="navigation__link {{ item.class }}">
+                        {{ item.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="navigation__cta">
+            <a href="#" class="button">Classes</a>
+            <a href="#" class="navigation__contact">Contact Us</a>
+        </div>
+
+        <span class="navigation__hamburger hamburger"></span><!-- /.hamburger -->
+
+    </div><!-- /.container -->
+</nav><!-- /.navigation -->

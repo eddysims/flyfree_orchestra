@@ -13,6 +13,8 @@ body {
     font-size: 18px;
     line-height: 1.8;
     font-family: 'Roboto', sans-serif;
+    background: $red;
+    color: $grey;
 }
 
 h1 {
@@ -48,5 +50,44 @@ a {
 
 strong {
     font-weight: 900;
+}
+
+.form {
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        flex: 1 0 100%;
+        margin-bottom: $spacing-mini;
+    }
+
+    &__footer {
+        margin-top: $spacing-small;
+    }
+}
+
+input {
+    &:not([type="submit"]) {
+        width: 100%;
+        border: 1px solid $light-grey;
+        height: 2.5rem;
+        padding: 0 $spacing-small;
+        font-size: .875rem;
+        font-family: $body-font;
+        border-radius: 3px;
+        transition: box-shadow 300ms, border 300ms;
+    
+        &:focus {
+            box-shadow: 0 0 0 3px $medium-grey inset;
+            border-color: $medium-grey;
+            outline: none;
+        }
+    }
 }
 
