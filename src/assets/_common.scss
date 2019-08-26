@@ -12,3 +12,37 @@
     margin: 0 auto;
     padding: 0 1.5rem;
 }
+
+.entry-header {
+    background-color: #eeeeee;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23eaeaea' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    text-align: center;
+    padding: $spacing-large $spacing-medium;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 1.5rem solid transparent;
+        border-right: 1.5rem solid transparent;
+        border-top: 1.5rem solid #eee;
+        position: absolute;
+        bottom: -1.5rem;
+        left: 50%;
+        margin-left: -.75rem;
+    }
+
+    &__subtitle {
+        font-family: $title-font;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        opacity: .8;
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin-top: .25em;
+    }
+}

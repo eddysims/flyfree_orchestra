@@ -19,3 +19,5 @@ add_action( 'after_setup_theme', 'flyfree_setup' );
 
 require_once 'inc/enqueue.php';
 require_once 'inc/timber.php';
+
+require_once 'inc/fields-alternate-title.php';

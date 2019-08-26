@@ -1,0 +1,11 @@
+<header class="entry-header">
+	{{ post.meta( 'alternate_page_sub_title' ) | prepend('<span class="entry-header__subtitle">') | append('</span>') }}
+
+	<h1 class="entry-header__title">
+		{% if post.meta( 'alternate_page_title' ) != blank %}
+			{{ post.meta('alternate_page_title') }}
+		{% else %}
+			{{ post.title }}
+		{% endif %}
+	</h1><!-- /.entry-header__title -->
+</header><!-- /.entry-header -->

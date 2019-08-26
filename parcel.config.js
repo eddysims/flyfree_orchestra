@@ -22,7 +22,7 @@ const options = {
     sourceMaps: process.env.NODE_ENV !== 'production'
 }
 
-const moveFile = (from, to) => {
+const moveFile = (from, to, reload = false) => {
     from = `./${from}`
     to = `${to}/${from.replace('src', '')}`
     const file = from.substring(from.lastIndexOf('/') + 1)
@@ -31,7 +31,14 @@ const moveFile = (from, to) => {
         .then(() => {
             console.log(chalk.bgGreenBright.black(`✔ ${file} successfully moved.`));
         })
+        .then(() => {
+            if (reload) {
+                reloadBrowsers();
+            }
+        })
         .catch(err => console.error(err))
+
+    
 }
 
 
@@ -67,19 +74,21 @@ const runWatcher = bundler => {
     ]);
 
     watcher.on('change', (path, stat) => {
-        moveFile(path, bundler.options.outDir)
-        reloadBrowsers(bundler);
+        moveFile(path, bundler.options.outDir, true)
+        
     })
 
     watcher.on('add', (path, stat) => {
         moveFile(path, bundler.options.outDir)
-        reloadBrowsers(bundler);
     })
 }
 
 /**
  * Tell parcel to reload our browser
  */
-const reloadBrowsers = (bundler) => browserSync.reload();
+const reloadBrowsers = (bundler) => {
+    console.log( 'reloading' );
+    browserSync.reload();
+}
 
 runBundle( argv.f )

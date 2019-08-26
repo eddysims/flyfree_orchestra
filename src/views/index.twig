@@ -11,11 +11,8 @@
 
 <div class="site">
 	{% include "@partial/navigation.twig" %}
-
-	<header class="entry-header">
-		<span class="entry-header__subtitle">This Is</span>
-		<h1 class="entry-header__title">Who we are!!</h1>
-	</header><!-- /.entry-header -->
+	{% include "@partial/entry-header.twig" %}
+	
 
 	<main class="entry-content">
 		{{ post.content }}
