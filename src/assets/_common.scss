@@ -1,9 +1,10 @@
 .site {
     width: 100%;
     max-width: 125rem;
-    background: white;
+    background: $white;
     margin: 0 auto;
     min-height: 100vh;
+    padding-top: 5rem;
 }
 
 .container {
