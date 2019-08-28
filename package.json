@@ -4,7 +4,8 @@
   "description": "The august 2019 Wordpress theme for flyfreemovement.com",
   "main": "index.js",
   "scripts": {
-    "start": "node parcel.config.js -f './src/**/*/*.bundle.js'"
+    "start": "node parcel.config.js -f './src/**/*.bundle.js'",
+    "build": "node parcel.config.js -f './src/**/*.bundle.js' --env=production"
   },
   "repository": {
     "type": "git",
