@@ -21,3 +21,4 @@ require_once 'inc/enqueue.php';
 require_once 'inc/timber.php';
 
 require_once 'inc/fields-alternate-title.php';
+require_once 'inc/alert-bar.php';

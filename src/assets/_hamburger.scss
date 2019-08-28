@@ -35,4 +35,24 @@
             transform: translate(-50%, -50%) rotate(-45deg);
         }
     }
+
+    &__arrow {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        top: 50%;
+        transform: rotate(45deg);
+        margin-top: -3px;
+        border-left: 2px solid $red;
+        border-bottom: 2px solid $red;
+        margin-left: -1px;
+        transition: border-width 300ms, width 300ms, height 300ms;
+
+        @at-root .is-open & {
+            border-width: 0;
+            width: 0;
+            height: 0;
+        }
+    }
 }

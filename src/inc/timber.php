@@ -32,6 +32,10 @@ add_filter( 'timber/loader/loader', function( $loader ) {
 function add_to_context( $data ) {
 	$data['main_menu'] = new TimberMenu('main-menu');
 	$data['footer_menu'] = new TimberMenu('footer-menu');
+	
+	if ( get_field( 'alert_bar', 'options' ) ) {
+		$data['alert_bar'] = __( get_field( 'alert_bar', 'options' ), 'flyfree' );
+	}
 
 	return $data;
 }

@@ -18,6 +18,13 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
           'label' => __( 'Alternate Page Title', 'flyfree' ),
           'type' => 'text'
         ),
+        array(
+          'key' => 'hero_image_key',
+          'name' => 'hero_image_key',
+          'label' => __( 'Hero Image', 'flyfree' ),
+          'type' => 'image',
+          'preview_size' => 'medium'
+        ),
       ),
       'location' => array(
         array(

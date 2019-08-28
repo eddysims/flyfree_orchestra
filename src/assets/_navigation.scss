@@ -2,14 +2,16 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
     padding: .5rem 0;
     top: 0;
-    position: fixed;
+    position: sticky;
     z-index: 9000;
     background: rgba($white, .9);
     width: 100%;
-    left: 50%;
     max-width: 125rem;
     margin: 0 auto;
-    transform: translateX(-50%);
+
+    @at-root .admin-bar & {
+        top: 32px;
+    }
 
     &__container {
         display: flex;
@@ -23,8 +25,8 @@
     }
 
     &__list {
-        position: absolute;
-        top: -100vh;
+        position: fixed;
+        top: calc(-100vh - 3rem);
         left: 0;
         width: 100%;
         background: $white;

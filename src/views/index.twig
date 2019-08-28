@@ -8,8 +8,12 @@
 	{{ function('wp_head') }}
 </head>
 <body {{ function('body_class') }}>
-
 <div class="site">
+	{% if alert_bar %}
+		{% include "@partial/alert-bar.twig" %}
+	{% endif %}
+	
+
 	{% include "@partial/navigation.twig" %}
 	{% include "@partial/entry-header.twig" %}
 	
