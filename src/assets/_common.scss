@@ -21,6 +21,8 @@
     padding: $spacing-large $spacing-medium;
     position: relative;
 
+    @at-root .home & { height: 75vh; }
+
     &::after {
         content: '';
         width: 0;
@@ -32,6 +34,20 @@
         bottom: -1.5rem;
         left: 50%;
         margin-left: -.75rem;
+
+        @at-root .home & { display: none; }
+    }
+
+    &.has-background {
+        padding-top: $spacing-large * 2;
+        padding-bottom: $spacing-large * 2;
+        background: no-repeat center center;
+        background-size: cover;
+
+        &::after {
+            display: none;
+        }
+
     }
 
     &__subtitle {

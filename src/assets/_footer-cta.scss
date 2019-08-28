@@ -3,24 +3,30 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23e0001b' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     display: block;
-    padding: 2rem;
+    padding: 3.5rem 0 2rem;
     color: white;
     text-align: center;
     font-weight: 100;
     font-size: 1.75rem;
     position: relative;
 
-    &::after {
+    &::after,
+    &::before {
         content: '';
-        width: 0;
-        height: 0;
-        border-left: 25px solid transparent;
-        border-right: 25px solid transparent;
-        border-bottom: 25px solid lighten($red, 1.25%);;
         position: absolute;
-        top: -25px;
-        left: 50%;
-        margin-left: -12px;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        border: 1.5rem solid transparent;
+        border-top-color: $white;
+        border-right: 0;
+    }
+
+    &::before {
+        left: 0;
+        border-right: 1.5rem solid transparent;
+        border-left: 0;
     }
     
     &:hover {
