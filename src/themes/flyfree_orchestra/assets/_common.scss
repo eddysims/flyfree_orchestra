@@ -62,3 +62,25 @@
         margin-top: .25em;
     }
 }
+
+.alignfull {
+    margin: 3rem calc(50% - 50vw);
+    max-width: 125rem;
+    width: 100vw;
+
+    @include breakpoint($full) {
+        margin-left: calc(50% - 62.5rem);
+        margin-right: calc(50% - 62.5rem);
+    }
+}
+
+.alignwide {
+    margin: 3rem calc(50% - 50vw);
+    max-width: 1024px;
+    width: 100vw;
+
+    @include breakpoint($xlarge) {
+        margin-left: calc(50% - 512px);
+        margin-right: calc(50% - 512px);
+    }
+}
