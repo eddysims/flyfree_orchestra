@@ -37,6 +37,14 @@ function add_to_context( $data ) {
 		$data['alert_bar'] = __( get_field( 'alert_bar', 'options' ), 'flyfree' );
 	}
 
+	if ( get_field( 'mailchimp_title', 'options' ) ) {
+		$data['mailchimp_title'] = __( get_field( 'mailchimp_title', 'options' ), 'flyfree' );
+	}
+
+	if ( get_field( 'mailchimp_content', 'options' ) ) {
+		$data['mailchimp_content'] = __( get_field( 'mailchimp_content', 'options' ), 'flyfree' );
+	}
+
 	return $data;
 }
 add_filter( 'timber_context', 'add_to_context' );

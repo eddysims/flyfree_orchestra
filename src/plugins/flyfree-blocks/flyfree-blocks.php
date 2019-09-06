@@ -17,4 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+require_once plugin_dir_path( __FILE__ ) . 'init.php';
 include( plugin_dir_path( __FILE__ ) . 'inc/block-whitelist.php' );
+

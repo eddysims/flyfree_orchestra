@@ -1,11 +1,7 @@
 <footer class="site-footer">
     <div class="container">
-        <div class="site-footer__heading">Join Our Mailing List</div><!-- /.site-footer__heading -->
-        <p>
-            Sign up to receive updates via our newsletter. 
-            You can unsubscribe at any time by clicking the 
-            the unscribe link in our emails.
-        </p>
+        {{ mailchimp_title | prepend('<div class="site-footer__heading">') | append('</div>') }}
+        {{ mailchimp_content | prepend('<p>') | append('</p>') }}
         
         <form action="//flyfreemovement.us12.list-manage.com/subscribe/post?u=b6948f032db184ef12e04ed80&amp;id=2326dffeeb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form site-footer__form" target="_blank" novalidate="novalidate">
             <ul class="form__list">

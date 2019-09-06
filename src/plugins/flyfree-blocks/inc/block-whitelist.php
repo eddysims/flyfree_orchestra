@@ -14,4 +14,4 @@ function flyfree_allowed_block_types( $allowed_blocks ) {
     );
 }
 
-add_filter( 'allowed_block_types', 'flyfree_allowed_block_types' );
+// add_filter( 'allowed_block_types', 'flyfree_allowed_block_types' );
