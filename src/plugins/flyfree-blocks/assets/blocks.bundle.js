@@ -9,5 +9,4 @@
  * All blocks should be included here since
  * this is the file that Webpack is compiling.
  */
-import './class-list/class-list';
-import './block2/block';
+import './blocks/class-list/class-list';

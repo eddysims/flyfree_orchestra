@@ -20,3 +20,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once plugin_dir_path( __FILE__ ) . 'init.php';
 include( plugin_dir_path( __FILE__ ) . 'inc/block-whitelist.php' );
 
+include( plugin_dir_path( __FILE__ ) . 'assets/class-list/class-list.php' );
+

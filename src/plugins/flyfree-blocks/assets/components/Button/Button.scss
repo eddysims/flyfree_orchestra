@@ -1,0 +1,41 @@
+@import "../../../../../_common/styles/colors";
+
+.Button {
+    display: inline-block;
+    background: $red;
+    color: white;
+    padding: 1rem 1.25rem;
+    font-size: .875rem;
+    font-weight: 900;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 300ms;
+    cursor: pointer;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        box-shadow: none;
+        background: lighten($red, 10%);
+    }
+
+    &[disabled] {
+        background: $medium-grey;
+        box-shadow: none;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    &.is-black {
+        background: $grey;
+    }
+
+    @at-root .wp-admin & {
+        pointer-events: none;
+    }
+}
