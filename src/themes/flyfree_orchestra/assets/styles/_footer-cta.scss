@@ -1,0 +1,40 @@
+.footer-cta {
+    background-color: lighten($red, 1.25%);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23BC0016' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    display: block;
+    padding: 3.5rem 0 2rem;
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    font-size: 2rem;
+    position: relative;
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        border: 1.5rem solid transparent;
+        border-top-color: $white;
+        border-right: 0;
+    }
+
+    &::before {
+        left: 0;
+        border-right: 1.5rem solid transparent;
+        border-left: 0;
+    }
+    
+    &:hover {
+        background-color: lighten($red, 2%);
+        box-shadow: none;
+
+        &::after {
+            border-bottom-color: lighten($red, 2%);;
+        }
+    }
+}

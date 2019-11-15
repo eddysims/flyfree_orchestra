@@ -14,23 +14,23 @@
 	{% endif %}
 	
 
-	{# {% include "@partial/navigation.twig" %}
-	{% include "@partial/entry-header.twig" %} #}
+	{% include "@partial/navigation.twig" %}
 	
 
 	<main class="entry-content">
 		{{ post.content }}
 	</main>
 
-	{# <a href="#" class="footer-cta">Join our movement! Signup for classes today.</a> #}
+	<a href="{{ site.url }}/classes" class="footer-cta">
+		Join our movement! Signup for classes today.
+	</a><!-- /.footer-cta -->
 
 	{% include "@partial/footer.twig" %}
 	{% include "@partial/footer-nav.twig" %}
 
 </div><!-- /.site -->
+
 {{ function('wp_footer') }}
-
-
 
 </body>
 </html>
