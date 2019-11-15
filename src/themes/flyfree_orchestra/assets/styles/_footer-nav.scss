@@ -1,0 +1,28 @@
+.footer-links {
+    background: $dark-grey;
+    padding: $spacing-medium 0;
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        box-shadow: none;
+        text-transform: uppercase;
+        font-size: .9375rem;
+        margin: 0 .75rem;
+        font-weight: 800;
+        outline: none;
+        color: white;
+
+        &:focus {
+            box-shadow: 0 -1px 0 0 $red inset;
+        }
+    }
+}
