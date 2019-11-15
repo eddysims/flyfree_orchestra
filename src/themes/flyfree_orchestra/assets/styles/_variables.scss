@@ -1,12 +1,7 @@
 @import '../../../../node_modules/breakpoint-sass/stylesheets/breakpoint';
 @import "../../../_common/styles/colors";
 @import "../../../_common/styles/spacing";
-
-$body-font: 'Roboto', sans-serif;
-$title-font: 'Work Sans', sans-serif;
-
-
-
+@import "../../../_common/styles/fonts";
 
 $small: '600px';
 $medium: '782px';

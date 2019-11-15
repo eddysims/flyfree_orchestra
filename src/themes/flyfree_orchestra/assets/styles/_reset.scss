@@ -1,6 +1,8 @@
 html,
 html * {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 *::before,
@@ -12,13 +14,12 @@ body {
     margin: 0;
     font-size: 18px;
     line-height: 1.8;
-    font-family: 'Roboto', sans-serif;
     background: $light-grey;
+    font-family: $primary-font;
     color: $grey;
 }
 
 h1 {
-    font-family: 'Work Sans', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1.2;
@@ -26,7 +27,6 @@ h1 {
 }
 
 h2 {
-    font-family: 'Work Sans', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1.2;
@@ -80,7 +80,7 @@ input {
         height: 2.5rem;
         padding: 0 $spacing-small;
         font-size: .875rem;
-        font-family: $body-font;
+        font-family: $primary-font;
         border-radius: 3px;
         transition: box-shadow 300ms, border 300ms;
     

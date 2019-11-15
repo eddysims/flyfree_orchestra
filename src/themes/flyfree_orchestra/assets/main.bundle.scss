@@ -1,21 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,900|Work+Sans:900&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+@import './styles/variables';
+@import './styles/reset';
+@import './styles/common';
 
-@import './variables';
-@import './reset';
-@import './common';
+@import './styles/alert-bar';
+
+// @import './navigation';
+// @import './footer';
+// @import './footer-nav';
+
+// @import './logo';
+// @import './hamburger';
+// @import './buttons';
+// @import './entry-content';
+// @import './footer-cta';
 
 
-@import './navigation';
-@import './footer';
-@import './footer-nav';
-
-@import './logo';
-@import './hamburger';
-@import './buttons';
-@import './entry-content';
-@import './footer-cta';
-
-@import './alert-bar';
-
-@import './wp-blocks/wp-block-separator';
-@import './wp-blocks/wp-block-button';
+// @import './wp-blocks/wp-block-separator';
+// @import './wp-blocks/wp-block-button';
