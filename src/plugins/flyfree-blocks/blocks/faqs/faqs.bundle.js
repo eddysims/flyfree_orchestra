@@ -72,15 +72,17 @@ registerBlockType( 'flyfree/faqs', {
 const FaqList = ( { questions, onChangeQuestion, onChangeAnswer } ) => {
     const Questions = questions.map( (question, index) => {
         return (
-            <div key={index}>
+            <div key={index} className="question">
                 <RichText
                     value={ question.question }
                     placeholder="Question"
+                    className="question__question"
                     onChange={ ( val ) => onChangeQuestion( val, index ) } />
 
                 <RichText
                     value={ question.answer }
                     placeholder="Answer"
+                    className="question__answer"
                     onChange={ ( val ) => onChangeAnswer( val, index ) } />
             </div>
         );

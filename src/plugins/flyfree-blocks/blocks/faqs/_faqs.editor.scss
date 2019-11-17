@@ -1,0 +1,17 @@
+.question {
+
+    &__question {
+
+        &::after {
+            display: none;
+        }
+
+        &:focus {
+            background: transparent !important;
+        }
+    }
+
+    &__answer {
+        display: block !important;
+    }
+}
