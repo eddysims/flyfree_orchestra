@@ -40,3 +40,54 @@
         max-width: $alignfull;
     }
 }
+
+.padding-small {
+	padding-top: $spacing-small;
+	padding-bottom: $spacing-small;
+}
+
+.padding-medium {
+	padding-top: $spacing-medium;
+	padding-bottom: $spacing-medium;
+}
+
+.padding-large {
+	padding-top: $spacing-large;
+	padding-bottom: $spacing-large;
+}
+
+.margin-top-small {
+	margin-top: $spacing-small;
+
+	&:last-child {
+		margin-bottom: $spacing-small;
+	}
+
+	& + [class*="padding-"] {
+		margin-top: $spacing-small;
+	}
+}
+
+.margin-top-medium {
+	margin-top: $spacing-medium;
+
+	&:last-child {
+		margin-bottom: $spacing-medium;
+	}
+
+	& + [class*="padding-"] {
+		margin-top: $spacing-medium;
+	}
+}
+
+.margin-top-large {
+	margin-top: $spacing-large;
+
+	&:last-child {
+		margin-bottom: $spacing-large;
+	}
+
+	& + [class*="padding-"] {
+		margin-top: $spacing-large;
+	}
+}

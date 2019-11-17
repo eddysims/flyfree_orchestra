@@ -1,4 +1,4 @@
-<div class="wp-block-flyfree-hero-image alignfull">
+<div class="wp-block-flyfree-hero-image alignfull" {{ attributes.id | prepend('id="') | append('"') }}>
     <div class="alignwide">
         {{ attributes.pretitle }}
         {{ attributes.title | prepend('<h1 class="wp-block-flyfree-hero-image__heading">') | append('</h1>') }}

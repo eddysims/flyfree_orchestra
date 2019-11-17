@@ -3,6 +3,7 @@ const { registerBlockType } = wp.blocks;
 const { select } = wp.data;
 const { InspectorControls, RichText } = wp.editor;
 
+import { BlockSettings } from '../../components/BlockSettings';
 import './_hero-image.scss';
 
 registerBlockType( 'flyfree/hero-image', {
@@ -17,18 +18,16 @@ registerBlockType( 'flyfree/hero-image', {
 		align: [ 'full' ],
 		default: 'full',
 	},
-	edit: (props) => {
-
-		const {
-			attributes: {
-				id,
-				pretitle,
-				title,
-			},
-			setAttributes,
-			className
-		} = props;
-		
+	edit: ( { 
+		attributes: {
+			id,
+			spacing,
+			pretitle,
+			title,
+		},
+		setAttributes,
+		className
+	} ) => {
 		if ( ! title || title === '' ) {
 			setAttributes( { title: select( 'core/editor' ).getEditedPostAttribute( 'title' ) } );
 		}
@@ -36,7 +35,10 @@ registerBlockType( 'flyfree/hero-image', {
 		return (
 			<>
 				<InspectorControls>
-					Hello 
+					<BlockSettings
+						setAttributes={ setAttributes }
+						attributes={ { id, spacing } }
+						includeSpacing={ false } /> 
 				</InspectorControls>
 				<div className={className}>
 					<RichText
