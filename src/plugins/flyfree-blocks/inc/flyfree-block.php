@@ -11,6 +11,7 @@
  * Optional options:
  * - 'render_callback' => @string - Used to pass in a custom render callback function.
  * - 'include_frontend_script' => @boolean - Used to tell whether to include 'block-name.frontend.bundle.js'
+ * - 'include_frontend_styles' => @boolean - Used to tell whether to include 'block-name.bundle.css'
  * - 'remove_async' => @boolean - Remove the async attribute from the frontend javascript
  * - 'remove_defer' => @boolean - Remove the defer attribute from the frontend javascript
  * 
@@ -27,15 +28,23 @@ class FlyfreeBlock {
 		if ( $this->options['render_callback'] ) {
 			$this->render_callback = &$this->options['render_callback'];
 		}
+		if ( ! isset( $this->options['include_frontend_styles'] ) ) {
+			$this->options['include_frontend_styles'] = true;
+		}
+
 		$this->add_action( 'init', array( &$this, 'flyfreeblock_register_block' ) );
-		$this->add_action( 'wp_enqueue_scripts', array( &$this, 'flyfreeblock_register_styles' ) );
-		$this->add_action( 'admin_enqueue_scripts', array( &$this, 'flyfreeblock_register_styles' ) );
-		$this->add_filter( 'style_loader_tag', array( &$this, 'flyfreeblock_preload_styles' ), 10, 4 );
+
+		if ( $this->options['include_frontend_styles'] ) {
+			$this->add_action( 'wp_enqueue_scripts', array( &$this, 'flyfreeblock_register_styles' ) );
+			$this->add_action( 'admin_enqueue_scripts', array( &$this, 'flyfreeblock_register_styles' ) );
+			$this->add_filter( 'style_loader_tag', array( &$this, 'flyfreeblock_preload_styles' ), 10, 4 );
+			$this->add_action( 'send_headers', array( &$this, 'flyfreeblock_push_styles' ), 10, 2 );
+		}
+
 		if ( $this->options['include_frontend_script'] ) {
 			$this->add_action( 'wp_enqueue_scripts', array( &$this, 'flyfreeblock_register_scripts' ) );
 			$this->add_filter( 'script_loader_tag', array( &$this, 'flyfreeblock_async_defer_scripts' ), 10, 3 );
 		}
-		$this->add_action( 'send_headers', array( &$this, 'flyfreeblock_push_styles' ), 10, 2 );
 	}
 	function add_action( $action, $function, $priority = 10, $args = 1 ) {
 		add_action( $action, $function, $priority, $args );

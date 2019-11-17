@@ -77,6 +77,7 @@ add_filter( 'timber/loader/loader', 'add_flyfreeblocks_namespace' );
 $blocks_to_register = array(
 	'hero-image',
 	'faqs',
+	'content',
 );
 
 foreach ( $blocks_to_register as $block ) {
