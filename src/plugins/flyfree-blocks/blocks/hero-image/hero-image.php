@@ -2,6 +2,10 @@
 
 new FlyfreeBlock( 'hero-image', array(
     'attributes' => array(
+        'align' => array(
+            'type' => 'string',
+            'default' => 'full',
+        ),
         'id' => array(
             'type' => 'string',
         ),
