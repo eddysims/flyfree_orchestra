@@ -32,6 +32,10 @@ registerBlockType( 'flyfree/faqs', {
             } ] } )
         };
 
+        const onDeleteFaqButtonClick = ( index ) => {
+			setAttributes( { questions: questions.filter( ( item, i ) => i !== index ? item : null ) } );
+		};
+
         const onChangeQuestion = ( val, index ) => {
 			const newQuestion = questions.map( ( item, i ) => i === index ? { ...item, question: val } : item );
 			setAttributes( { questions: newQuestion } );
@@ -55,7 +59,8 @@ registerBlockType( 'flyfree/faqs', {
                     <FaqList
                         questions={ questions }
                         onChangeQuestion={ onChangeQuestion }
-                        onChangeAnswer={ onChangeAnswer } />
+                        onChangeAnswer={ onChangeAnswer }
+                        onDeleteFaqButtonClick={ onDeleteFaqButtonClick } />
 
                     <Button isLarge={ true } isPrimary={ true } onClick={ onAddFaqButtonClick }>
                         Add FAQ
@@ -69,7 +74,7 @@ registerBlockType( 'flyfree/faqs', {
 	},
 } );
 
-const FaqList = ( { questions, onChangeQuestion, onChangeAnswer } ) => {
+const FaqList = ( { questions, onChangeQuestion, onChangeAnswer, onDeleteFaqButtonClick } ) => {
     const Questions = questions.map( (question, index) => {
         return (
             <div key={index} className="question">
@@ -79,11 +84,20 @@ const FaqList = ( { questions, onChangeQuestion, onChangeAnswer } ) => {
                     className="question__question"
                     onChange={ ( val ) => onChangeQuestion( val, index ) } />
 
-                <RichText
-                    value={ question.answer }
-                    placeholder="Answer"
-                    className="question__answer"
-                    onChange={ ( val ) => onChangeAnswer( val, index ) } />
+                <div className="question__answer">
+                    <RichText
+                        value={ question.answer }
+                        placeholder="Answer"
+                        onChange={ ( val ) => onChangeAnswer( val, index ) } />
+
+                    <Button 
+                        isDestructive={ true }
+                        isSmall={ true } 
+                        onClick={ () => onDeleteFaqButtonClick( index ) } >
+
+                        Remove FAQ
+                    </Button>
+                </div>
             </div>
         );
     } );
