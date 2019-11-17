@@ -1,3 +1,11 @@
+@import '../../../_common/styles/variables';
+
+/**
+ * @edeesims put this is as this is the suggested way to update the font
+ * that is used in all the blocks. This will make the blocks appear as
+ * our primary font
+**/
 .wp-block {
-    display: block;
+	font-family: $primary-font;
 }
+

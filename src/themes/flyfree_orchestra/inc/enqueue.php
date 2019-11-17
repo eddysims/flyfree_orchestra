@@ -12,7 +12,7 @@ function enqueue_jobber_scripts() {
 	$js_modified_time = filemtime( get_template_directory() . '/assets/main.bundle.js' );
 	
 	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/assets/main.bundle.css', '', $css_modified_time );
-	wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap', '', '' );
+	wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900&display=swap', '', '' );
 
 	wp_enqueue_script( 'main-script', get_template_directory_uri() . '/assets/main.bundle.js', array(), $js_modified_time, true );
 }

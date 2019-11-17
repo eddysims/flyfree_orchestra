@@ -51,6 +51,13 @@ function flyfree_blocks_editor_assets() {
 		array( 'wp-edit-blocks' ),
 		filemtime( plugin_dir_path( __FILE__ ) . '/assets/flyfreeblocks.editor.bundle.css' )
 	);
+
+	wp_enqueue_style( 
+		'google-font',
+		'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900&display=swap',
+		'',
+		''
+	);
 }
 add_action( 'enqueue_block_editor_assets', 'flyfree_blocks_editor_assets', 99 );
 

@@ -1,45 +1,55 @@
-/**
- * Internal dependencies
- */
-const { __ } = wp.i18n;
+
 const { registerBlockType } = wp.blocks;
-const { InspectorControls } = wp.editor;
-const { Fragment } = wp.element
+const { select } = wp.data;
+const { InspectorControls, RichText } = wp.editor;
 
 import './_hero-image.scss';
 
 registerBlockType( 'flyfree/hero-image', {
-	title: __( 'Hero Image' ),
-	icon: {
-		background: '#f00',
-		foreground: '#fff',
-		src: 'text',
-	},
+	title: 'Hero Banner',
 	category: 'flyfree',
-	keywords: [
-		__( 'Text' ),
-		__( 'Content' ),
-	],
-	supports: {
-		align: [ 'center', 'wide' ],
-		default: 'center',
+	icon: {
+		background: '#AC0015',
+		foreground: '#ffffff',
+		src: 'tide',
 	},
-	edit( props ) {
+	supports: {
+		align: [ 'full' ],
+		default: 'full',
+	},
+	edit: (props) => {
+
 		const {
 			attributes: {
 				id,
 				pretitle,
+				title,
 			},
 			setAttributes,
+			className
 		} = props;
+		
+		if ( ! title || title === '' ) {
+			setAttributes( { title: select( 'core/editor' ).getEditedPostAttribute( 'title' ) } );
+		}
 
 		return (
 			<>
 				<InspectorControls>
 					Hello 
 				</InspectorControls>
-				<div>
-					Hello World
+				<div className={className}>
+					<RichText
+						value={ pretitle }
+						placeholder="Pretitle"
+						onChange={ (val) => setAttributes( { pretitle: val } ) } />
+
+					<RichText
+						value={ title }
+						placeholder="Title"
+						tagName="h1"
+						className="wp-block-flyfree-hero-image__heading"
+						onChange={ (val) => setAttributes( { title: val } ) } />
 				</div>
 			</>
 		);

@@ -1,1 +1,6 @@
-<h1 class="wp-block-hero-image">Hello World from Timber</h1>
+<div class="wp-block-flyfree-hero-image alignfull">
+    <div class="alignwide">
+        {{ attributes.pretitle }}
+        {{ attributes.title | prepend('<h1 class="wp-block-flyfree-hero-image__heading">') | append('</h1>') }}
+    </div><!-- /.alignwide -->
+</div><!-- /.alignfull -->

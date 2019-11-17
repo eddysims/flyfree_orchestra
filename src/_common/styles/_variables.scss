@@ -1,0 +1,14 @@
+@import '../../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+@import "./colors";
+@import "./spacing";
+@import "./fonts";
+
+$entry-content: 40rem;
+$alignwide: 75rem;
+$alignfull: 125rem;
+
+$small: '600px';
+$medium: '782px';
+$large: '960px';
+$xlarge: '1024px';
+$full: '125rem';
