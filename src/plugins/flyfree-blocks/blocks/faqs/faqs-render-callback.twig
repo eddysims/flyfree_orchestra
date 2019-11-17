@@ -1,0 +1,11 @@
+<section
+    class="wp-block-flyfree-faqs {{ attributes.spacing | prepend('margin-top-') }}"
+    {{ attributes.id | prepend('id="') | append('"') }}>
+    
+    {% for question in attributes.questions %}
+        <div class="question">
+            <div class="question__question" tabindex="0">{{ question.question }}</div>
+            <div class="question__answer">{{ question.answer }}</div>
+        </div>
+    {% endfor %}
+</section>

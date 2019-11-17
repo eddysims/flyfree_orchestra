@@ -1,0 +1,63 @@
+@import '../../../../_common/styles/variables';
+
+.wp-block-flyfree-faqs {
+}
+
+.question {
+    border: 1px solid $light-grey;
+    margin-bottom: 1.5rem;
+    border-radius: 3px;
+
+    &__question {
+        position: relative;
+        padding: .75rem 3rem .75rem 1.5rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 0.9375rem;
+        transition: background 300ms;
+        cursor: pointer;
+        outline: none;
+
+        &:focus {
+            background: $light-grey;
+        }
+
+        @at-root .is-open & {
+            background: $red;
+            color: $white;
+
+            &:focus {
+                background: lighten($red, 5%);
+            }
+        }
+
+        &::after {
+           position: absolute;
+           content: '';
+           top: 50%;
+           right: 1.5rem;
+           width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 10px solid $medium-grey;
+            transform: translateY(-50%);
+            transition: transform 300ms;
+
+            @at-root .is-open & {
+                transform: translateY(-50%) rotate(180deg);
+                border-top-color: $white;
+            }
+        }
+    }
+
+    &__answer {
+        display: none;
+        padding: 1.5rem;
+        border-top: 1px solid $light-grey;
+
+        @at-root .is-open & {
+            display: block;
+        }
+    }
+}
