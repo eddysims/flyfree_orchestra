@@ -78,6 +78,7 @@ $blocks_to_register = array(
 	'hero-image',
 	'faqs',
 	'content',
+	'image-banner',
 );
 
 foreach ( $blocks_to_register as $block ) {

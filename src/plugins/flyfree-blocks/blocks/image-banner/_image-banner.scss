@@ -1,0 +1,13 @@
+.wp-block-flyfree-image-banner {
+    background: no-repeat center center;
+    background-size: cover;
+    height: 30rem;
+
+    &.is-small {
+        height: 15rem;
+    }
+
+    &.is-large {
+        height: 50rem;
+    }
+}
