@@ -13,3 +13,17 @@
 	font-family: $primary-font;
 }
 
+/**
+ @eddysims put this in as a mini hack to hide some core blocks from the
+ block menu that we need in <Innerblocks /> components.
+**/
+.editor-block-types-list {
+
+	button {
+		&[aria-label="List"],
+		&[aria-label="Heading"],
+		&[aria-label="Paragraph"] {
+			display: none;
+		}
+	}
+}

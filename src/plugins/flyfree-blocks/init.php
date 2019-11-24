@@ -58,6 +58,14 @@ function flyfree_blocks_editor_assets() {
 		'',
 		''
 	);
+
+	wp_enqueue_script(
+		'flyfree-blocks-editor-js',
+		plugin_dir_url( __FILE__ ) . '/assets/flyfreeblocks.editor.bundle.js',
+		FLYFREE_DEPENDENCIES,
+		filemtime( plugin_dir_path( __FILE__ ) . '/assets/flyfreeblocks.editor.bundle.js' ),
+		true
+	);
 }
 add_action( 'enqueue_block_editor_assets', 'flyfree_blocks_editor_assets', 99 );
 
@@ -69,7 +77,6 @@ function add_flyfreeblocks_namespace( $loader ) {
 	return $loader;
 }
 add_filter( 'timber/loader/loader', 'add_flyfreeblocks_namespace' );
-
 
 /**
  * Require a list of dynamic blocks
@@ -84,3 +91,27 @@ $blocks_to_register = array(
 foreach ( $blocks_to_register as $block ) {
 	require_once plugin_dir_path( __FILE__ ) . 'blocks/' . $block . '/' . $block . '.php';
 }
+
+/**
+ * Whitelist our blocks plus a few core blocks
+ */
+if ( ! function_exists( 'flyfree_blocks_allowed_blocks' ) ) {
+	function flyfree_blocks_allowed_blocks( $allowed_blocks ) {
+		global $blocks_to_register;
+
+		$whitelisted_blocks = array(
+			'core/paragraph',
+			'core/heading',
+			'core/list',
+		);
+
+		foreach ( $blocks_to_register as $block ) {
+			$whitelisted_blocks[] = 'flyfree/' . $block;
+		}
+
+		return $whitelisted_blocks;
+	}
+
+	add_filter( 'allowed_block_types', 'flyfree_blocks_allowed_blocks' );
+}
+
