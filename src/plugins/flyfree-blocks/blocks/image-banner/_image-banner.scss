@@ -10,4 +10,7 @@
     &.is-large {
         height: 50rem;
     }
+    &[class*="margin-top"]:last-child {
+        margin-bottom: 0;
+	}
 }
