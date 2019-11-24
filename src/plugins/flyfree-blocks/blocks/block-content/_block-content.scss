@@ -1,0 +1,21 @@
+@import '../../../../_common/styles/variables';
+
+.wp-block-flyfree-block-content {
+    background-color: lighten($red, 1.25%);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23BC0016' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    padding: $spacing-small;
+    color: $white;
+    border-radius: 3px;
+    text-align: center !important;
+    font-size: 1.25rem;
+
+    a {
+        color: $white;
+        box-shadow: 0 -1px 0 0 $white inset;
+
+        &:hover {
+            box-shadow: 0 -23px 0 0 lighten($red, 5%) inset;
+        }
+    }
+}

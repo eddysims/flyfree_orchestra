@@ -86,6 +86,7 @@ $blocks_to_register = array(
 	'faqs',
 	'content',
 	'image-banner',
+	'block-content',
 );
 
 foreach ( $blocks_to_register as $block ) {

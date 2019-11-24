@@ -1,0 +1,10 @@
+<section
+    class="
+        wp-block-flyfree-block-content 
+        {{ attributes.align | prepend('align') }} 
+        {{ attributes.spacing | prepend('margin-top-') }}
+    "
+    {{ attributes.id | prepend('id="') | append('"') }}>
+
+    {{ content }}
+</section>
