@@ -29,7 +29,7 @@ registerBlockType( 'flyfree/content', {
 				</InspectorControls>
 				<div className={ `${className} margin-top-${spacing}`}>
                     <InnerBlocks
-                        allowedBlocks={ [ 'core/heading', 'core/paragraph', 'core/list' ] }
+                        allowedBlocks={ [ 'core/heading', 'core/paragraph', 'core/list', 'core/shortcode' ] }
                         template={ [ [ 'core/paragraph' ] ] } />
 				</div>
 			</>

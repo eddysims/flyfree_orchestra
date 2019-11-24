@@ -1,0 +1,19 @@
+<strong>CONNECT WITH US!</strong>
+  
+{% if social_media is defined %}
+  <ul class="social">
+    {% for item in social_media %}
+      <li class="social__item">
+		<a
+			href="{{ item.url }}"
+			class="social__link social__link--{{ item.platform }}"
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label="Follow us on {{ item.platform }}">
+
+			{% include '@image/social-' ~ item.platform ~ '.svg' %}
+		</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

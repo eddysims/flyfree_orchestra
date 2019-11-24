@@ -23,6 +23,7 @@ add_filter( 'timber/twig', 'add_to_twig' );
  */
 add_filter( 'timber/loader/loader', function( $loader ) {
 	$loader->addPath( get_template_directory() . '/partials', 'partial' );
+	$loader->addPath( get_template_directory() . '/assets/images', 'image' );
 	return $loader;
 } );
 
