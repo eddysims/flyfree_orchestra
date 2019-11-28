@@ -1,0 +1,18 @@
+<section
+    class="wp-block-flyfree-class-list alignfull {{ attributes.spacing | prepend('margin-top-') }}"
+    {{ attributes.id | prepend('id="') | append('"') }}>
+
+    <div 
+        class="wp-block-flyfree-class-list__image"
+        style="background-image: url({{ attributes.image }});">
+    </div>
+
+    <div class="wp-block-flyfree-class-list__content alignwide">
+        {{ attributes.title | prepend('<h2 class="wp-block-flyfree-class-list__title">') | append('</h2>') }}
+        {{ attributes.subtitle | prepend('<div class="wp-block-flyfree-class-list__sub-title">') | append('</div>') }}
+    
+        {% if attributes.classes %}
+            {% include "@flyfreeblocks/components/class-list.twig" with {classes: attributes.classes} only %}
+        {% endif %}
+    </div>
+</section>

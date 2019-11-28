@@ -16,7 +16,8 @@ if ( ! defined( 'FLYFREE_DEPENDENCIES' ) ) {
 		'wp-data',
 		'wp-i18n',
 		'wp-editor',
-		'wp-components'
+		'wp-components',
+		'wp-block-library',
 	) );
 }
 
@@ -87,6 +88,7 @@ $blocks_to_register = array(
 	'content',
 	'image-banner',
 	'block-content',
+	'class-list',
 );
 
 foreach ( $blocks_to_register as $block ) {

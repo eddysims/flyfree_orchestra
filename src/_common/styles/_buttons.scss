@@ -21,4 +21,20 @@ input[type="submit"] {
         box-shadow: none;
         background: lighten($red, 10%);
     }
+
+    &.is-black {
+        background: $grey;
+
+        &:hover,
+        &:focus {
+            background: lighten($grey, 10%);
+        }
+    }
+
+    &[disabled] {
+        background: $medium-grey;
+        box-shadow: none;
+        cursor: default;
+        pointer-events: none;
+    }
 }

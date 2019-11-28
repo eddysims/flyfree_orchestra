@@ -30,6 +30,11 @@
     }
 }
 
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .alignfull {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
@@ -39,8 +44,8 @@
     width: 100vw;
 
     @include breakpoint($alignfull) {
-        margin-left: calc(50% - #{$alignwide} / 2);
-        margin-right: calc(50% - #{$alignwide} / 2);
+        margin-left: calc(-50% + 1.5rem - #{$alignfull} / 4.6296296296);
+        margin-right: calc(-50% + 1.5rem - #{$alignfull} / 4.6296296296);
         max-width: $alignfull;
     }
 }

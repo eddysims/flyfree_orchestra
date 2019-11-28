@@ -1,0 +1,36 @@
+<ul class="class-list">
+    {% for location in classes %}
+        {% if loop.first %}
+            {% set is_first = true %}
+        {% else %}
+            {% set is_first = false %}
+        {% endif %}
+        <li class="class-list__location {% if is_first %}class-list__location--flagship{% endif %}" style="order: {{ loop.index * 2 }}" >
+            <strong class="class-list__location-name">
+                {{ location.location_name }}
+            </strong>
+            {{ location.location_address }}
+
+            <ul class="class-list__list">
+                {% for class in location.classes %}
+                    <li class="
+                        class-list__item 
+                        {% if class.is_all %}class-list__item--block{% endif %} 
+                        {% if is_first %}class-list__item--flagship{% endif %}
+                    ">
+                        <a 
+                            href="{{ class.url }}"
+                            class="button {% if class.is_all %}is-black{% endif %}"
+                            {% if class.is_full %}
+                                disabled
+                                tabindex="-1"
+                            {% endif %}
+                        >
+                            {{ class.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
