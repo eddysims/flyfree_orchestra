@@ -31,9 +31,7 @@
     }
 
     &__content {
-        // background: lighten($light-grey, 5%);
         padding: $spacing-small 1.5rem;
-        // flex: 0 0 50%;
         position:relative;
         z-index: 10;
 
@@ -49,4 +47,8 @@
         text-transform: uppercase;
         margin-bottom: .5rem;
     }
+
+    &[class*="margin-top"]:last-child {
+        margin-bottom: 0;
+	}
 }
