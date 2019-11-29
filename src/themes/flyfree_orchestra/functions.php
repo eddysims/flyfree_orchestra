@@ -27,8 +27,8 @@ require_once 'inc/shortcode-social.php';
 require_once 'inc/shortcode-button.php';
 
 // require_once 'inc/fields-alternate-title.php';
-// require_once 'inc/fields-mailchimp.php';
-// require_once 'inc/alert-bar.php';
+require_once 'inc/fields-mailchimp.php';
+require_once 'inc/alert-bar.php';
 
 
 

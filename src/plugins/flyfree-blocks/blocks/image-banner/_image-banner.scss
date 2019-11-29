@@ -8,8 +8,9 @@
     }
 
     &.is-large {
-        height: 50rem;
+        height: calc(100vh - 5rem);
     }
+
     &[class*="margin-top"]:last-child {
         margin-bottom: 0;
 	}

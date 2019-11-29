@@ -30,7 +30,8 @@ if ( function_exists( 'acf_add_options_page' ) ) :
     acf_add_options_page( array(
         'page_title' => 'Classes',
         'menu_title' => 'Classes',
-        'icon_url' => 'dashicons-heart'
+        'icon_url' => 'dashicons-heart',
+        'position' => '30',
     ) );
 endif;
 

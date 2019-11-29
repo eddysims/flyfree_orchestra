@@ -22,7 +22,8 @@ if ( function_exists( 'acf_add_options_page' ) ) :
     acf_add_options_page( array(
         'page_title' => 'Social Media',
         'menu_title' => 'Social Media',
-        'icon_url' => 'dashicons-instagram'
+        'icon_url' => 'dashicons-instagram',
+        'position' => '30',
     ) );
 endif;
 
