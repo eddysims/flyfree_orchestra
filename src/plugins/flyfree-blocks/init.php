@@ -106,6 +106,7 @@ if ( ! function_exists( 'flyfree_blocks_allowed_blocks' ) ) {
 			'core/paragraph',
 			'core/heading',
 			'core/list',
+			'core/block',
 		);
 
 		foreach ( $blocks_to_register as $block ) {
