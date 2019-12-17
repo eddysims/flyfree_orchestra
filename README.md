@@ -1,2 +1,3 @@
-# flyfree_orchestra
-The august 2019 Wordpress theme for flyfreemovement.com
+# Flyfree Movement
+
+A theme/plugin monorepo for [Flyfree Movement](https://flyfreemovement.com).
