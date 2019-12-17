@@ -1,4 +1,4 @@
-const { TextControl, PanelBody, Toolbar, ColorPalette } = wp.components;
+const { TextControl, PanelBody, Toolbar } = wp.components;
 import { Zero, Small, Medium, Large } from './Icons';
 
 export const BlockSettings = ( {
@@ -29,8 +29,8 @@ const SpacingToolbar = ( {
 		title: 'Zero',
 		isActive: spacing === 'zero',
 		onClick: () => setAttributes( { spacing: 'zero' } ),
-    },
-    {
+	},
+	{
 		icon: <Small />,
 		title: 'Small',
 		isActive: spacing === 'small',

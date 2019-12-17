@@ -18,7 +18,7 @@ registerBlockType( 'flyfree/hero-image', {
 		align: [ 'full' ],
 		default: 'full',
 	},
-	edit: ( { 
+	edit: ( {
 		attributes: {
 			id,
 			spacing,
@@ -26,7 +26,7 @@ registerBlockType( 'flyfree/hero-image', {
 			title,
 		},
 		setAttributes,
-		className
+		className,
 	} ) => {
 		if ( ! title || title === '' ) {
 			setAttributes( { title: select( 'core/editor' ).getEditedPostAttribute( 'title' ) } );
@@ -38,20 +38,20 @@ registerBlockType( 'flyfree/hero-image', {
 					<BlockSettings
 						setAttributes={ setAttributes }
 						attributes={ { id, spacing } }
-						includeSpacing={ false } /> 
+						includeSpacing={ false } />
 				</InspectorControls>
-				<div className={className}>
+				<div className={ className }>
 					<RichText
 						value={ pretitle }
 						placeholder="Pretitle"
-						onChange={ (val) => setAttributes( { pretitle: val } ) } />
+						onChange={ ( val ) => setAttributes( { pretitle: val } ) } />
 
 					<RichText
 						value={ title }
 						placeholder="Title"
 						tagName="h1"
 						className="wp-block-flyfree-hero-image__heading"
-						onChange={ (val) => setAttributes( { title: val } ) } />
+						onChange={ ( val ) => setAttributes( { title: val } ) } />
 				</div>
 			</>
 		);

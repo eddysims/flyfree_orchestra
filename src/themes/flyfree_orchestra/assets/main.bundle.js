@@ -1,7 +1,7 @@
 import './main.bundle.scss';
 
-import hamburgerClick from './scripts/hamburger'
+import hamburgerClick from './scripts/hamburger';
 
-document.addEventListener('DOMContentLoaded', () => {
-    hamburgerClick();
-})
+document.addEventListener( 'DOMContentLoaded', () => {
+	hamburgerClick();
+} );

@@ -1,5 +1,5 @@
 
-const { registerBlockType  } = wp.blocks;
+const { registerBlockType } = wp.blocks;
 const { InspectorControls, InnerBlocks } = wp.editor;
 
 import { BlockSettings } from '../../components/BlockSettings';
@@ -12,13 +12,13 @@ registerBlockType( 'flyfree/content', {
 		foreground: '#ffffff',
 		src: 'text',
 	},
-	edit: ( { 
+	edit: ( {
 		attributes: {
 			id,
 			spacing,
 		},
 		setAttributes,
-		className
+		className,
 	} ) => {
 		return (
 			<>
@@ -27,10 +27,10 @@ registerBlockType( 'flyfree/content', {
 						setAttributes={ setAttributes }
 						attributes={ { id, spacing } } />
 				</InspectorControls>
-				<div className={ `${className} margin-top-${spacing}`}>
-                    <InnerBlocks
-                        allowedBlocks={ [ 'core/heading', 'core/paragraph', 'core/list', 'core/shortcode' ] }
-                        template={ [ [ 'core/paragraph' ] ] } />
+				<div className={ `${ className } margin-top-${ spacing }` }>
+					<InnerBlocks
+						allowedBlocks={ [ 'core/heading', 'core/paragraph', 'core/list', 'core/shortcode' ] }
+						template={ [ [ 'core/paragraph' ] ] } />
 				</div>
 			</>
 		);

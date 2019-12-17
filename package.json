@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/edeesims/flyfree_orchestra#readme",
   "devDependencies": {
+    "@wordpress/eslint-plugin": "^3.2.0",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
@@ -26,6 +27,7 @@
     "browser-sync": "^2.26.7",
     "chalk": "^2.4.2",
     "dotenv": "^8.0.0",
+    "eslint": "^6.7.2",
     "fs-extra": "^8.1.0",
     "glob-watcher": "^5.0.3",
     "minimist": "^1.2.0",

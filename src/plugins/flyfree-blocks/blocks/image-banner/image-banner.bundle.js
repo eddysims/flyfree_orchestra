@@ -1,10 +1,9 @@
 
 const { registerBlockType } = wp.blocks;
 const { InspectorControls, MediaPlaceholder } = wp.editor;
-const { Toolbar, PanelBody, PanelRow } = wp.components;
+const { Toolbar } = wp.components;
 const { BlockControls, MediaUpload, MediaUploadCheck } = wp.blockEditor;
 import { Small, Medium, Large } from '../../components/Icons';
-
 
 import { BlockSettings } from '../../components/BlockSettings';
 import { getLargestImageSize } from '../../../../_common/scripts/getLargestImageSize';
@@ -22,7 +21,7 @@ registerBlockType( 'flyfree/image-banner', {
 		align: [ 'full' ],
 		default: 'full',
 	},
-	edit: ( { 
+	edit: ( {
 		attributes: {
 			id,
 			spacing,
@@ -30,9 +29,8 @@ registerBlockType( 'flyfree/image-banner', {
 			size,
 		},
 		setAttributes,
-		className
+		className,
 	} ) => {
-
 		return (
 			<>
 				<InspectorControls>
@@ -40,14 +38,14 @@ registerBlockType( 'flyfree/image-banner', {
 						setAttributes={ setAttributes }
 						attributes={ { id, spacing } } />
 				</InspectorControls>
-                <BlockControls>
-                    <EditImageToolbar
-                        size={ size }
-                        image={ image }
-                        setAttributes={ setAttributes } />
-                </BlockControls>
-				<div className={`${className} is-${size}`} style={{backgroundImage: `url(${image})`}}>
-					{ ! image ? <ImageSelect image={image} setAttributes={setAttributes}/> : '' }
+				<BlockControls>
+					<EditImageToolbar
+						size={ size }
+						image={ image }
+						setAttributes={ setAttributes } />
+				</BlockControls>
+				<div className={ `${ className } is-${ size }` } style={ { backgroundImage: `url(${ image })` } }>
+					{ ! image ? <ImageSelect image={ image } setAttributes={ setAttributes } /> : '' }
 				</div>
 			</>
 		);
@@ -57,18 +55,18 @@ registerBlockType( 'flyfree/image-banner', {
 	},
 } );
 
-const ImageSelect = ({ image, setAttributes }) => {
-    return (
-        <MediaPlaceholder 
-            onSelect={ ( { url, sizes } ) => {
-                const newImage = sizes ? getLargestImageSize(sizes) : url;
-                setAttributes({ image: newImage })
-            } }/>
-    );
-}
+const ImageSelect = ( { setAttributes } ) => {
+	return (
+		<MediaPlaceholder
+			onSelect={ ( { url, sizes } ) => {
+				const newImage = sizes ? getLargestImageSize( sizes ) : url;
+				setAttributes( { image: newImage } );
+			} } />
+	);
+};
 
-const EditImageToolbar = ({size, image, setAttributes}) => { 
-	const controls = [{
+const EditImageToolbar = ( { size, setAttributes } ) => {
+	const controls = [ {
 		icon: <Small />,
 		title: 'Small',
 		isActive: size === 'small',
@@ -85,39 +83,26 @@ const EditImageToolbar = ({size, image, setAttributes}) => {
 		title: 'Large',
 		isActive: size === 'large',
 		onClick: () => setAttributes( { size: 'large' } ),
-    } ];
-	
+	} ];
+
 	return (
-        <>
-            <MediaUploadCheck>
-                <MediaUpload
-                    onSelect={ ( { url, sizes } ) => {
-                        const newImage = sizes ? getLargestImageSize(sizes) : url;
-                        setAttributes({ image: newImage })
-                    } }
-                    render={ ( { open } ) => (
-                        <Toolbar controls={[{
-                            icon: 'edit',
-                            label: "Edit Image",
-                            onClick: open
-                        }]} />
-                    ) }
-                />
-            </MediaUploadCheck>
-            <Toolbar controls={ controls } />
-        </>
+		<>
+			<MediaUploadCheck>
+				<MediaUpload
+					onSelect={ ( { url, sizes } ) => {
+						const newImage = sizes ? getLargestImageSize( sizes ) : url;
+						setAttributes( { image: newImage } );
+					} }
+					render={ ( { open } ) => (
+						<Toolbar controls={ [ {
+							icon: 'edit',
+							label: 'Edit Image',
+							onClick: open,
+						} ] } />
+					) }
+				/>
+			</MediaUploadCheck>
+			<Toolbar controls={ controls } />
+		</>
 	);
 };
-
-const BlockOptions = ({size, sticky, setAttributes}) => {
-    
-
-    return (
-        <PanelBody title="Image Banner Options">
-             <PanelRow>
-                Size:
-                
-             </PanelRow>
-        </PanelBody>
-    )
-}
