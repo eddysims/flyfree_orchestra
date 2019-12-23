@@ -8,7 +8,7 @@
     "build": "node parcel.config.js -f './src/**/*.bundle.js' --env=production",
     "lint:js": "eslint './src/**/*/*.js'",
     "lint:css": "stylelint './src/**/*/*.(css|scss)'",
-    "lint": "npm run lint:js"
+    "lint": "npm run lint:js && npm run lint:css"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,10 @@
   "lint-staged": {
     "./src/**/*.js": [
       "npm run lint:js",
+      "git add"
+    ],
+    "./src/**/*.(css|scss)": [
+      "npm run lint:css",
       "git add"
     ]
   },
