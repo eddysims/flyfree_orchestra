@@ -1,13 +1,13 @@
 .logo {
-    display: inline-flex;
-    align-items: center;
-    box-shadow: none;
+	display: inline-flex;
+	align-items: center;
+	box-shadow: none;
 
-    &:hover {
-        box-shadow: none;
-    }
+	&:hover {
+		box-shadow: none;
+	}
 
-    svg {
-        height: 100%;
-    }
+	svg {
+		height: 100%;
+	}
 }

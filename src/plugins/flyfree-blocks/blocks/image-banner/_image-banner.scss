@@ -1,17 +1,17 @@
 .wp-block-flyfree-image-banner {
-    background: no-repeat center center;
-    background-size: cover;
-    height: 30rem;
+	background: no-repeat center center;
+	background-size: cover;
+	height: 30rem;
 
-    &.is-small {
-        height: 15rem;
-    }
+	&.is-small {
+		height: 15rem;
+	}
 
-    &.is-large {
-        height: calc(100vh - 5rem);
-    }
+	&.is-large {
+		height: calc(100vh - 5rem);
+	}
 
-    &[class*="margin-top"]:last-child {
-        margin-bottom: 0;
+	&[class*="margin-top"]:last-child {
+		margin-bottom: 0;
 	}
 }

@@ -1,10 +1,8 @@
-@import '../../../_common/styles/variables';
-
-@import '../../../_common/styles/buttons';
-
-@import '../blocks/faqs/faqs.editor';
-@import '../blocks/content/content.editor';
-@import '../blocks/image-banner/image-banner.editor';
+@import "../../../_common/styles/variables";
+@import "../../../_common/styles/buttons";
+@import "../blocks/faqs/faqs.editor";
+@import "../blocks/content/content.editor";
+@import "../blocks/image-banner/image-banner.editor";
 
 /**
  * @edeesims put this is as this is the suggested way to update the font
@@ -22,6 +20,7 @@
 .editor-block-types-list {
 
 	button {
+
 		&[aria-label="List"],
 		&[aria-label="Heading"],
 		&[aria-label="Paragraph"] {

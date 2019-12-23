@@ -1,21 +1,21 @@
 .question {
 
-    &__question {
+	&__question {
 
-        &::after {
-            display: none;
-        }
+		&::after {
+			display: none;
+		}
 
-        &:focus {
-            background: transparent !important;
-        }
-    }
+		&:focus {
+			background: transparent !important;
+		}
+	}
 
-    &__answer {
-        display: block !important;
+	&__answer {
+		display: block !important;
 
-        button {
-            margin-top: 1.5rem;
-        }
-    }
+		button {
+			margin-top: 1.5rem;
+		}
+	}
 }

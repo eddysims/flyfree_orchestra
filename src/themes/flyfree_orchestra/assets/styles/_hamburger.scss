@@ -1,58 +1,58 @@
 .hamburger {
-    display: inline-block;
-    min-width: 1.75rem;
-    min-height: 1.75rem;
-    position: relative;
+	display: inline-block;
+	min-width: 1.75rem;
+	min-height: 1.75rem;
+	position: relative;
 
-    &::before,
-    &::after {
-        content: '';
-        width: 1.75rem;
-        height: 2px;
-        background: $red;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 -8px 0 0 $grey;
-        transition: box-shadow 150ms linear 150ms, transform 150ms linear 0ms;
-    }
+	&::before,
+	&::after {
+		content: "";
+		width: 1.75rem;
+		height: 2px;
+		background: $red;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		box-shadow: 0 -8px 0 0 $grey;
+		transition: box-shadow 150ms linear 150ms, transform 150ms linear 0ms;
+	}
 
-    &::after {
-        box-shadow: 0 8px 0 0 $grey;
-    }
+	&::after {
+		box-shadow: 0 8px 0 0 $grey;
+	}
 
-    &.is-open {
+	&.is-open {
 
-        &::before,
-        &::after {
-            box-shadow: 0 0 0 0 transparent;
-            transform: translate(-50%, -50%) rotate(45deg);
-            transition: box-shadow 150ms linear 0ms, transform 150ms linear 150ms; 
-        }
+		&::before,
+		&::after {
+			box-shadow: 0 0 0 0 transparent;
+			transform: translate(-50%, -50%) rotate(45deg);
+			transition: box-shadow 150ms linear 0ms, transform 150ms linear 150ms;
+		}
 
-        &::after {
-            transform: translate(-50%, -50%) rotate(-45deg);
-        }
-    }
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
 
-    &__arrow {
-        display: inline-block;
-        width: 6px;
-        height: 6px;
-        position: absolute;
-        top: 50%;
-        transform: rotate(45deg);
-        margin-top: -3px;
-        border-left: 2px solid $red;
-        border-bottom: 2px solid $red;
-        margin-left: -1px;
-        transition: border-width 300ms, width 300ms, height 300ms;
+	&__arrow {
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		position: absolute;
+		top: 50%;
+		transform: rotate(45deg);
+		margin-top: -3px;
+		border-left: 2px solid $red;
+		border-bottom: 2px solid $red;
+		margin-left: -1px;
+		transition: border-width 300ms, width 300ms, height 300ms;
 
-        @at-root .is-open & {
-            border-width: 0;
-            width: 0;
-            height: 0;
-        }
-    }
+		@at-root .is-open & {
+			border-width: 0;
+			width: 0;
+			height: 0;
+		}
+	}
 }

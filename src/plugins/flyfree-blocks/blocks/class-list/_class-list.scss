@@ -1,54 +1,53 @@
-@import '../../../../_common/styles/variables';
-@import '../../components/class-list';
+@import "../../../../_common/styles/variables";
+@import "../../components/class-list";
 
 .wp-block-flyfree-class-list {
-    position: relative;
-    padding: $spacing-small 0;
-    text-align: center;
-    padding: 0 !important;
-    background-color: lighten($light-grey, 1.75%);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23eeeeee' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	position: relative;
+	text-align: center;
+	padding: 0 !important;
+	background-color: lighten($light-grey, 1.75%);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23eeeeee' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 
-    @include breakpoint($large) {
-        // display: flex;
-    }
+	@include breakpoint($large) {
+		// display: flex;
+	}
 
-    &__image {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        opacity: .2;
-        background: no-repeat center center fixed;
-        background-size: cover;
+	&__image {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		opacity: 0.2;
+		background: no-repeat center center fixed;
+		background-size: cover;
 
-        @include breakpoint($large) {
-            display: block;
-        }
-    }
+		@include breakpoint($large) {
+			display: block;
+		}
+	}
 
-    &__content {
-        padding: $spacing-small 1.5rem;
-        position:relative;
-        z-index: 10;
+	&__content {
+		padding: $spacing-small 1.5rem;
+		position: relative;
+		z-index: 10;
 
-        @include breakpoint($large) {
-           margin: 0;
-           padding: $spacing-medium $spacing-large
-        }
-    }
+		@include breakpoint($large) {
+			margin: 0;
+			padding: $spacing-medium $spacing-large;
+		}
+	}
 
-    &__title {
-        font-size: 2rem;
-        font-weight: 900;
-        text-transform: uppercase;
-        margin-bottom: .5rem;
-    }
+	&__title {
+		font-size: 2rem;
+		font-weight: 900;
+		text-transform: uppercase;
+		margin-bottom: 0.5rem;
+	}
 
-    &[class*="margin-top"]:last-child {
-        margin-bottom: 0;
+	&[class*="margin-top"]:last-child {
+		margin-bottom: 0;
 	}
 }

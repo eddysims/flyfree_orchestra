@@ -1,51 +1,51 @@
 .site {
-    width: 100%;
-    max-width: $alignfull;
-    background: $white;
-    margin: 0 auto;
-    min-height: 100vh;
+	width: 100%;
+	max-width: $alignfull;
+	background: $white;
+	margin: 0 auto;
+	min-height: 100vh;
 }
 
 .entry-content {
-    max-width: $entry-content;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    margin: 0 auto;
-    width: 100%;
+	max-width: $entry-content;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	margin: 0 auto;
+	width: 100%;
 }
 
 .alignwide,
 .container {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    max-width: 100vw;
-    width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	max-width: 100vw;
+	width: 100vw;
 
-    @include breakpoint($alignwide) {
-        margin-left: calc(50% - #{$alignwide} / 2);
-        margin-right: calc(50% - #{$alignwide} / 2);
-        max-width: $alignwide;
-    }
+	@include breakpoint($alignwide) {
+		margin-left: calc(50% - #{$alignwide} / 2);
+		margin-right: calc(50% - #{$alignwide} / 2);
+		max-width: $alignwide;
+	}
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .alignfull {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    max-width: 100vw;
-    width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	max-width: 100vw;
+	width: 100vw;
 
-    @include breakpoint($alignfull) {
-        margin-left: calc(-50% + 1.5rem - #{$alignfull} / 4.6296296296);
-        margin-right: calc(-50% + 1.5rem - #{$alignfull} / 4.6296296296);
-        max-width: $alignfull;
-    }
+	@include breakpoint($alignfull) {
+		margin-left: calc(-50% + 1.5rem - #{$alignfull} / 4.6296296296);
+		margin-right: calc(-50% + 1.5rem - #{$alignfull} / 4.6296296296);
+		max-width: $alignfull;
+	}
 }
